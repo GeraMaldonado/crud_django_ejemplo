@@ -20,8 +20,8 @@ class Movie(models.Model):
     popularity = models.FloatField(null=True, blank=True)
     vote_average = models.FloatField(null=True, blank=True)
     vote_count = models.IntegerField(null=True, blank=True)
-    homepage = models.URLField(null=True, blank=True)
-    poster_path = models.CharField(null=True, blank=True)
+    homepage = models.URLField(max_length=1000, null=True, blank=True)
+    poster_path = models.CharField(max_length=255, null=True, blank=True)
 
     genres = models.ManyToManyField(Genre, related_name="movies", blank=True)
 
