@@ -30,6 +30,7 @@
       <th>Estreno</th>
       <th>Rating</th>
       <th>Géneros</th>
+      <th>Acciones</th>
     </tr>
   </thead>
   <tbody>
@@ -39,6 +40,9 @@
       <td>{{ m.release_date }}</td>
       <td>{{ m.vote_average }}</td>
       <td>{{ m.genres.all|join:", " }}</td>
+      <td>
+        <a class="btn btn-sm btn-outline-primary" href="{% url 'movie_update' m.pk %}">Editar</a>
+      </td>
     </tr>
     {% empty %}
     <tr><td colspan="5">Sin resultados</td></tr>
