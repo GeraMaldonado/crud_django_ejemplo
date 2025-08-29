@@ -45,3 +45,12 @@ class MovieCreate(generic.CreateView):
         messages.success(self.request, "Película creada correctamente.")
         return super().form_valid(form)
 
+class MovieUpdate(generic.UpdateView):
+    model = Movie
+    form_class = MovieForm
+    template_name = "catalog/movie_form.html"
+    success_url = reverse_lazy("movie_list")
+
+    def form_valid(self, form):
+        messages.success(self.request, "Película actualizada.")
+        return super().form_valid(form)
