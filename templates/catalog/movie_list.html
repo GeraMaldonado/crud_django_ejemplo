@@ -2,8 +2,10 @@
 {% block title %}Películas{% endblock %}
 
 {% block content %}
-<h1 class="h3">Películas</h1>
-
+<div class="d-flex justify-content-between align-items-center mb-3">
+  <h1 class="h3">Películas</h1>
+  <a class="btn btn-success" href="{% url 'movie_create' %}">Crear</a>
+</div>
 <form class="row g-2 mb-3">
   <div class="col-md-6">
     <input name="q" value="{{ q }}" class="form-control" placeholder="Buscar por título o IMDB id">
