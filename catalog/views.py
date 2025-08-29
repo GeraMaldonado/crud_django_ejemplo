@@ -1,7 +1,9 @@
-#from django.shortcuts import render
 from django.views import generic
 from django.db.models import Q
+from django.urls import reverse_lazy
 from .models import Movie, Genre
+from django.contrib import messages
+from .forms import MovieForm
 
 class MovieList(generic.ListView):
     model = Movie
@@ -32,4 +34,14 @@ class MovieList(generic.ListView):
 class MovieDetail(generic.DetailView):
     model = Movie
     template_name = "catalog/movie_detail.html"
+
+class MovieCreate(generic.CreateView):
+    model = Movie
+    form_class = MovieForm
+    template_name = "catalog/movie_form.html"
+    success_url = reverse_lazy("movie_list")
+
+    def form_valid(self, form):
+        messages.success(self.request, "Película creada correctamente.")
+        return super().form_valid(form)
 
