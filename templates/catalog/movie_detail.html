@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<h1 class="h3">{{ object.title }}</h1>
+<p>{{ object.overview }}</p>
+<p><strong>Estreno:</strong> {{ object.release_date }} · <strong>IMDB:</strong> {{ object.imdb_id }}</p>
+<p><strong>Géneros:</strong> {{ object.genres.all|join:", " }}</p>
+{% if object.homepage %}<p><a href="{{ object.homepage }}" target="_blank" rel="noopener">Homepage</a></p>{% endif %}
+{% if object.poster_path %}
+  <img src="https://image.tmdb.org/t/p/w500{{ object.poster_path }}"
+       alt="Poster de {{ object.title }}" loading="lazy"
+       style="max-width: 100%; height: auto;">
+{% endif %}
+{% endblock %}
+
