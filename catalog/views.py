@@ -54,3 +54,12 @@ class MovieUpdate(generic.UpdateView):
     def form_valid(self, form):
         messages.success(self.request, "Película actualizada.")
         return super().form_valid(form)
+
+class MovieDelete(generic.DeleteView):
+    model = Movie
+    template_name = "catalog/movie_confirm_delete.html"
+    success_url = reverse_lazy("movie_list")
+ 
+    def delete(self, request, *args, **kwargs):
+        messages.success(self.request, "Película eliminada.")
+        return super().delete(request, *args, **kwargs)
