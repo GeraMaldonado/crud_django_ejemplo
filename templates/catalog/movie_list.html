@@ -42,6 +42,7 @@
       <td>{{ m.genres.all|join:", " }}</td>
       <td>
         <a class="btn btn-sm btn-outline-primary" href="{% url 'movie_update' m.pk %}">Editar</a>
+        <a class="btn btn-sm btn-outline-danger" href="{% url 'movie_delete' m.pk %}">Eliminar</a>
       </td>
     </tr>
     {% empty %}
