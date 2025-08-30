@@ -1,6 +1,9 @@
 # crud django Peliculas
 _Proyecto de ejemplo con Django 5 + MariaDB: catálogo de películas con géneros, búsqueda, filtros por género, paginación y CRUD (crear, editar, borrar). Incluye semilla de datos (dump.sql) para cargar rápidamente._
 
+![Grabación-de-pantalla-desde-2025-08-29-23-45-08](https://github.com/user-attachments/assets/3696820a-fc1b-4f5c-a24d-7960fdcfebf9)
+
+
 ## Requisitos
 
 - Django 5.2
